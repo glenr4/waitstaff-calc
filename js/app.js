@@ -22,16 +22,27 @@ angular.module('waitStaffApp', ['ngMessages'])
 
 			// Call other functions
 			customerCharges();
+			earningsInfo();
 		};
 
 		customerCharges = function(){
 			var thisMeal = mealData[mealData.length - 1];
-			$scope.custSubTotal = thisMeal.mealPrice * 
-				(1 + thisMeal.taxRate/100);
+			$scope.custSubTotal = thisMeal.mealPrice * (1 + thisMeal.taxRate/100);
 
 			$scope.custTip = thisMeal.mealPrice * thisMeal.tipPcnt/100;
 
 			$scope.custTotal = $scope.custSubTotal + $scope.custTip;
+		};
 
+		earningsInfo = function(){
+			$scope.earningsTip = 0;
+			for (var i=0; i < mealData.length; i++){
+				$scope.earningsTip = $scope.earningsTip + mealData[i].mealPrice * mealData[i].tipPcnt/100;
+				// console.log($scope.earningsTip);
+			};
+
+			$scope.earningsCount = mealData.length;
+
+			$scope.earningsAvgTip = $scope.earningsTip/$scope.earningsCount;
 		};
 	});
