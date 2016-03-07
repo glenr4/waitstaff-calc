@@ -21,18 +21,43 @@
 		<form name="detailsForm" novalidate ng-submit="detailsForm.$valid && submit()">
 			<ul>
 				<li>
-					<label >Base Meal Price: $
+					<label>Base Meal Price: $
 						<input type="number" name="mealPrice" ng-model="mealPrice" required>
 					</label>
 				</li>
 				<li>
 					<div ng-messages="detailsForm.mealPrice.$error" ng-if="detailsForm.$submitted">
 						<p ng-message="required">This field is required</p>
-					</div>
-					
+					</div>					
+				</li>
+
+				<li>
+					<label>Tax Rate: %
+						<input type="number" name="taxRate" ng-model="taxRate" required>
+					</label>
+				</li>
+				<li>
+					<div ng-messages="detailsForm.taxRate.$error" ng-if="detailsForm.$submitted">
+						<p ng-message="required">This field is required</p>
+					</div>					
+				</li>
+
+				<li>
+					<label>Tip Percentage: %
+						<input type="number" name="tipPcnt" ng-model="tipPcnt" required>
+					</label>
+				</li>
+				<li>
+					<div ng-messages="detailsForm.tipPcnt.$error" ng-if="detailsForm.$submitted">
+						<p ng-message="required">This field is required</p>
+					</div>					
 				</li>
 
 			</ul>
+			<div>
+				<button type="submit" name="submit">Submit</button>
+				<button name="cancel" ng-click="cancel()">Cancel</button>
+			</div>
 		</form>
 
 		<pre>{{detailsForm | json}}</pre>
