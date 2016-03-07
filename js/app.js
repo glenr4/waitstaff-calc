@@ -3,7 +3,7 @@ angular.module('waitStaffApp', ['ngMessages'])
 
 		$scope.submit = function(){
 
-
+			console.log("Submitted");
 		};
 
 

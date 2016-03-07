@@ -18,11 +18,11 @@
 	</header>
 
 	<section id="enter-details">
-		<form name="detailsForm" novalidate ng-sumbit="submit()">
+		<form name="detailsForm" novalidate ng-submit="detailsForm.$valid && submit()">
 			<ul>
 				<li>
 					<label >Base Meal Price: $
-						<input type="number" name="mealPrice" ng-model="mealPrice" ng-required="detailsForm.$dirty || detailsForm.$submitted">
+						<input type="number" name="mealPrice" ng-model="mealPrice" required>
 					</label>
 				</li>
 				<li>
