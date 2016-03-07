@@ -67,23 +67,23 @@
 	<section id="customer-charges">
 		<h2>Customer Charges</h2>
 		<ul>
-			<li>Subtotal: {{custSubTotal}}</li>
-			<li>Tip: {{custTip}}</li>
-			<li>Total: {{custTotal}}</li>
+			<li>Subtotal: {{custSubTotal | currency:$:2}}</li>
+			<li>Tip: {{custTip | currency:$:2}}</li>
+			<li>Total: {{custTotal | currency:$:2}}</li>
 		</ul>
 	</section>
 
 	<section id="earnings">
 		<h2>My Earnings Info</h2>
 		<ul>
-			<li>Tip Total: {{earningsTip}}</li>
+			<li>Tip Total: {{earningsTip | currency:$:2}}</li>
 			<li>Meal Count: {{earningsCount}}</li>
-			<li>Average Tip Per Meal: {{earningsAvgTip}}</li>
+			<li>Average Tip Per Meal: {{earningsAvgTip | currency:$:2}}</li>
 		</ul>
 	</section>
 
 	<footer>
-		<button name="reset" ng-click="reset()"></button>
+		<button name="reset" ng-click="reset()">Reset</button>
 	</footer>
 </body>
 </html>

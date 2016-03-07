@@ -10,17 +10,18 @@ angular.module('waitStaffApp', ['ngMessages'])
 				"taxRate": $scope.taxRate, 
 				"tipPcnt": $scope.tipPcnt});
 			
-			console.log(mealData);
+			// console.log(mealData);
 
-			// Clear form
-			$scope.mealPrice = "";
-			$scope.taxRate = "";
-			$scope.tipPcnt = "";
+			// // Clear form
+			// $scope.mealPrice = "";
+			// $scope.taxRate = "";
+			// $scope.tipPcnt = "";
 
-			$scope.detailsForm.$setPristine();
-			$scope.detailsForm.$setUntouched();
+			// $scope.detailsForm.$setPristine();
+			// $scope.detailsForm.$setUntouched();
 
 			// Call other functions
+			clearForm();
 			customerCharges();
 			earningsInfo();
 		};
@@ -44,5 +45,21 @@ angular.module('waitStaffApp', ['ngMessages'])
 			$scope.earningsCount = mealData.length;
 
 			$scope.earningsAvgTip = $scope.earningsTip/$scope.earningsCount;
+		};
+
+		$scope.cancel = function(){
+			clearForm();
+		};
+
+		clearForm = function(){
+			// Clear form
+			$scope.mealPrice = "";
+			$scope.taxRate = "";
+			$scope.tipPcnt = "";
+
+			$scope.detailsForm.$setPristine();
+			$scope.detailsForm.$setUntouched();
+
+			console.log("clearForm $submitted: " + $scope.detailsForm.$pristine);
 		};
 	});
