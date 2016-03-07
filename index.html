@@ -14,10 +14,11 @@
 
 <body ng-app="waitStaffApp" ng-controller="waitStaffCtrl">
 	<header>
-		
+		<h1>Waitstaff Calculator</h1>
 	</header>
 
 	<section id="enter-details">
+		<h2>Enter the Meal Details</h2>
 		<form name="detailsForm" novalidate ng-submit="detailsForm.$valid && submit()">
 			<ul>
 				<li>
@@ -60,23 +61,29 @@
 			</div>
 		</form>
 
-		<pre>{{detailsForm | json}}</pre>
+		<!-- <pre>{{detailsForm | json}}</pre> -->
 	</section>
 
 	<section id="customer-charges">
-		
+		<h2>Customer Charges</h2>
+		<ul>
+			<li>Subtotal: {{custSubTotal}}</li>
+			<li>Tip: {{custTip}}</li>
+			<li>Total: {{custTotal}}</li>
+		</ul>
 	</section>
 
 	<section id="earnings">
-		
+		<h2>My Earnings Info</h2>
+		<ul>
+			<li>Tip Total: {{earningsTip}}</li>
+			<li>Meal Count: {{earningsCount}}</li>
+			<li>Average Tip Per Meal: {{earningsAvgTip}}</li>
+		</ul>
 	</section>
 
-
-
-
-
-
-
-	
+	<footer>
+		<button name="reset" ng-click="reset()"></button>
+	</footer>
 </body>
 </html>
