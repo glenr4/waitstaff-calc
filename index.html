@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Waitstaff Calculator</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-messages.js"></script>
+	<script src="js/app.js"></script>
+
+
+</head>
+
+<body ng-app="waitStaffApp" ng-controller="waitStaffCtrl">
+	<header>
+		
+	</header>
+
+	<section id="enter-details">
+		<form name="detailsForm" novalidate ng-sumbit="submit()">
+			<ul>
+				<li>
+					<label >Base Meal Price: $
+						<input type="number" name="mealPrice" ng-model="mealPrice" ng-required="detailsForm.$dirty || detailsForm.$submitted">
+					</label>
+				</li>
+				<li>
+					<div ng-messages="detailsForm.mealPrice.$error" ng-if="detailsForm.$submitted">
+						<p ng-message="required">This field is required</p>
+					</div>
+					
+				</li>
+
+			</ul>
+		</form>
+
+		<pre>{{detailsForm | json}}</pre>
+	</section>
+
+	<section id="customer-charges">
+		
+	</section>
+
+	<section id="earnings">
+		
+	</section>
+
+
+
+
+
+
+
+	
+</body>
+</html>
