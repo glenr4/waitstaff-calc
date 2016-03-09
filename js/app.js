@@ -10,16 +10,6 @@ angular.module('waitStaffApp', ['ngMessages'])
 				"taxRate": $scope.taxRate, 
 				"tipPcnt": $scope.tipPcnt});
 			
-			// console.log(mealData);
-
-			// // Clear form
-			// $scope.mealPrice = "";
-			// $scope.taxRate = "";
-			// $scope.tipPcnt = "";
-
-			// $scope.detailsForm.$setPristine();
-			// $scope.detailsForm.$setUntouched();
-
 			// Call other functions
 			clearForm();
 			customerCharges();
@@ -40,6 +30,7 @@ angular.module('waitStaffApp', ['ngMessages'])
 			$scope.earningsAvgTip = "";
 
 			clearForm();
+			console.log("reset");
 		};
 
 		customerCharges = function(){
@@ -47,7 +38,6 @@ angular.module('waitStaffApp', ['ngMessages'])
 			$scope.custSubTotal = thisMeal.mealPrice * (1 + thisMeal.taxRate/100);
 
 			$scope.custTip = thisMeal.mealPrice * thisMeal.tipPcnt/100;
-
 			$scope.custTotal = $scope.custSubTotal + $scope.custTip;
 		};
 
@@ -55,15 +45,11 @@ angular.module('waitStaffApp', ['ngMessages'])
 			$scope.earningsTip = 0;
 			for (var i=0; i < mealData.length; i++){
 				$scope.earningsTip = $scope.earningsTip + mealData[i].mealPrice * mealData[i].tipPcnt/100;
-				// console.log($scope.earningsTip);
 			};
 
 			$scope.earningsCount = mealData.length;
-
 			$scope.earningsAvgTip = $scope.earningsTip/$scope.earningsCount;
 		};
-
-
 
 		clearForm = function(){
 			// Clear form
@@ -73,10 +59,12 @@ angular.module('waitStaffApp', ['ngMessages'])
 
 			$scope.detailsForm.$setPristine();
 			$scope.detailsForm.$setUntouched();
-
-			console.log("clearForm $pristine: " + $scope.detailsForm.$pristine);
-			console.log("clearForm $submitted: " + $scope.detailsForm.$submitted);
 		};
 
-
+		// Initialise Customer Charges and Earnings
+		angular.element(document).ready(function(){
+			// This runs but does not set the variables to $0.00?
+			$scope.reset();
+			console.log("ready");
+		});
 	});

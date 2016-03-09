@@ -17,7 +17,7 @@
 		<h1>Waitstaff Calculator</h1>
 	</header>
 
-	<section id="enter-details">
+	<section id="enter-details" class="left-side border">
 		<h2>Enter the Meal Details</h2>
 		<form name="detailsForm" novalidate ng-submit="detailsForm.$valid && submit()">
 			<ul>
@@ -62,30 +62,29 @@
 		</form>
 	</section>
 
-	<section id="customer-charges">
-		<h2>Customer Charges</h2>
-		<ul>
-			<li>Subtotal: {{custSubTotal | currency:$:2}}</li>
-			<li>Tip: {{custTip | currency:$:2}}</li>
-			<li>Total: {{custTotal | currency:$:2}}</li>
-		</ul>
-	</section>
+	<section class="right-side">
+		<div id="customer-charges" class="border">
+			<h2>Customer Charges</h2>
+			<ul>
+				<li>Subtotal: {{custSubTotal | currency:$:2}}</li>
+				<li>Tip: {{custTip | currency:$:2}}</li>
+				<li>Total: {{custTotal | currency:$:2}}</li>
+			</ul>
+		</div>
 
-	<section id="earnings">
-		<h2>My Earnings Info</h2>
-		<ul>
-			<li>Tip Total: {{earningsTip | currency:$:2}}</li>
-			<li>Meal Count: {{earningsCount}}</li>
-			<li>Average Tip Per Meal: {{earningsAvgTip | currency:$:2}}</li>
-		</ul>
+		<div id="earnings" class="border">
+			<h2>My Earnings Info</h2>
+			<ul>
+				<li>Tip Total: {{earningsTip | currency:$:2}}</li>
+				<li>Meal Count: {{earningsCount}}</li>
+				<li>Average Tip Per Meal: {{earningsAvgTip | currency:$:2}}</li>
+			</ul>
+		</div>
 	</section>
 
 	<footer>
 		<button type="button" name="reset" ng-click="reset()">Reset</button>
 	</footer>
-
-	<p>Pristine: {{detailsForm.$pristine}}</p>
-	<p>Submitted: {{detailsForm.$submitted}}</p>
 
 	<!-- <pre>{{detailsForm | json}}</pre> -->
 </body>
