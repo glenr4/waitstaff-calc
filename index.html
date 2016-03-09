@@ -57,11 +57,9 @@
 			</ul>
 			<div>
 				<button type="submit" name="submit">Submit</button>
-				<button name="cancel" ng-click="cancel()">Cancel</button>
+				<button type="button" name="cancel" ng-click="cancel()">Cancel</button>
 			</div>
 		</form>
-
-		<!-- <pre>{{detailsForm | json}}</pre> -->
 	</section>
 
 	<section id="customer-charges">
@@ -83,7 +81,12 @@
 	</section>
 
 	<footer>
-		<button name="reset" ng-click="reset()">Reset</button>
+		<button type="button" name="reset" ng-click="reset()">Reset</button>
 	</footer>
+
+	<p>Pristine: {{detailsForm.$pristine}}</p>
+	<p>Submitted: {{detailsForm.$submitted}}</p>
+
+	<!-- <pre>{{detailsForm | json}}</pre> -->
 </body>
 </html>

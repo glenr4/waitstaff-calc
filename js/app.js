@@ -26,6 +26,22 @@ angular.module('waitStaffApp', ['ngMessages'])
 			earningsInfo();
 		};
 
+		$scope.cancel = function(){
+			clearForm();
+		};
+
+		$scope.reset = function(){
+			$scope.custSubTotal = "";
+			$scope.custTip = "";
+			$scope.custTotal = "";
+
+			$scope.earningsTip = "";
+			$scope.earningsCount = "";
+			$scope.earningsAvgTip = "";
+
+			clearForm();
+		};
+
 		customerCharges = function(){
 			var thisMeal = mealData[mealData.length - 1];
 			$scope.custSubTotal = thisMeal.mealPrice * (1 + thisMeal.taxRate/100);
@@ -47,9 +63,7 @@ angular.module('waitStaffApp', ['ngMessages'])
 			$scope.earningsAvgTip = $scope.earningsTip/$scope.earningsCount;
 		};
 
-		$scope.cancel = function(){
-			clearForm();
-		};
+
 
 		clearForm = function(){
 			// Clear form
@@ -60,6 +74,9 @@ angular.module('waitStaffApp', ['ngMessages'])
 			$scope.detailsForm.$setPristine();
 			$scope.detailsForm.$setUntouched();
 
-			console.log("clearForm $submitted: " + $scope.detailsForm.$pristine);
+			console.log("clearForm $pristine: " + $scope.detailsForm.$pristine);
+			console.log("clearForm $submitted: " + $scope.detailsForm.$submitted);
 		};
+
+
 	});
