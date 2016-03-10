@@ -1,40 +1,35 @@
-box-sizing: border-box;
+/*box-sizing: border-box;*/
 
 /* Layout */
-body {
-	width: 80%;
+
+.container {
+	width: 60%;
+	/*max-width: 800px;*/
 	margin: 0 auto;
-	/*overflow: hidden;*/
 }
 
-.left-side {
-	float: left;
-	width: 50%;
-}
-
-.right-side {
-	float: right;
-	width: 45%;
+.block-top {
+	display: inline-block;
+	vertical-align: top;
 }
 
 #enter-details {
-	
+	width: 50%;
 }
 
-#customer-charges {
-	
+#charge-earnings {
+	width: 45%;
 }
 
-#earnings {
-	
+ul {
+	padding: 0;
 }
-
-
 
 /* Styling */
 .border {
 	border: 1px solid #000000;
 	padding: 5px;
+	margin-bottom: 10px;
 }
 
 h1,h2,h3,h4,h5,h6,p,li {
@@ -57,9 +52,13 @@ label {
 }
 
 input {
-	/*text-align: right;*/
+	width: 45%;
 }
 
 .centre-text  {
 	text-align: center;
+}
+
+.right-text {
+	text-align: right;
 }
