@@ -3,8 +3,7 @@
 /* Layout */
 
 .container {
-	width: 60%;
-	/*max-width: 800px;*/
+	width: 70%;
 	margin: 0 auto;
 }
 
@@ -61,4 +60,15 @@ input {
 
 .right-text {
 	text-align: right;
+}
+
+.input-error {
+	border: solid 1px red;
+}
+
+.input-error-msg {
+	display: inline-block;
+	color: red;
+	font-size: 0.75em;
+	margin: 0;
 }

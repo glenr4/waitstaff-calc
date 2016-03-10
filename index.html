@@ -27,8 +27,8 @@
 						<input type="number" name="mealPrice" ng-model="mealPrice" required>
 					</li>
 					<li>
-						<div ng-messages="detailsForm.mealPrice.$error" ng-if="detailsForm.$submitted">
-							<p ng-message="required">This field is required</p>
+						<div ng-messages="detailsForm.mealPrice.$error" ng-if="detailsForm.$submitted"><label></label>
+							<p class="input-error-msg" ng-message="required">This field is required</p>
 						</div>					
 					</li>
 
@@ -37,8 +37,8 @@
 						<input type="number" name="taxRate" ng-model="taxRate" required>
 					</li>
 					<li>
-						<div ng-messages="detailsForm.taxRate.$error" ng-if="detailsForm.$submitted">
-							<p ng-message="required">This field is required</p>
+						<div ng-messages="detailsForm.taxRate.$error" ng-if="detailsForm.$submitted"><label></label>
+							<p class="input-error-msg" ng-message="required">This field is required</p>
 						</div>					
 					</li>
 
@@ -47,8 +47,8 @@
 						<input type="number" name="tipPcnt" ng-model="tipPcnt" required>
 					</li>
 					<li>
-						<div ng-messages="detailsForm.tipPcnt.$error" ng-if="detailsForm.$submitted">
-							<p ng-message="required">This field is required</p>
+						<div ng-messages="detailsForm.tipPcnt.$error" ng-if="detailsForm.$submitted"><label></label>
+							<p class="input-error-msg" ng-message="required">This field is required</p>
 						</div>					
 					</li>
 
