@@ -24,30 +24,30 @@
 				<ul>
 					<li>
 						<label>Base Meal Price: $</label>
-						<input type="number" name="mealPrice" ng-model="mealPrice" required>
+						<input type="number" name="mealPrice" placeholder="0.00" ng-model="mealPrice" ng-required="detailsForm.$submitted">
 					</li>
 					<li>
-						<div ng-messages="detailsForm.mealPrice.$error" ng-if="detailsForm.$submitted"><label></label>
+						<div ng-messages="detailsForm.mealPrice.$error"><label></label>
 							<p class="input-error-msg" ng-message="required">This field is required</p>
 						</div>					
 					</li>
 
 					<li>
 						<label>Tax Rate: %</label>
-						<input type="number" name="taxRate" ng-model="taxRate" required>
+						<input type="number" name="taxRate" placeholder="10" ng-model="taxRate" ng-required="detailsForm.$submitted">
 					</li>
 					<li>
-						<div ng-messages="detailsForm.taxRate.$error" ng-if="detailsForm.$submitted"><label></label>
+						<div ng-messages="detailsForm.taxRate.$error"><label></label>
 							<p class="input-error-msg" ng-message="required">This field is required</p>
 						</div>					
 					</li>
 
 					<li>
 						<label>Tip Percentage: %</label>
-						<input type="number" name="tipPcnt" ng-model="tipPcnt" required>
+						<input type="number" name="tipPcnt" placeholder="15" ng-model="tipPcnt" ng-required="detailsForm.$submitted">
 					</li>
 					<li>
-						<div ng-messages="detailsForm.tipPcnt.$error" ng-if="detailsForm.$submitted"><label></label>
+						<div ng-messages="detailsForm.tipPcnt.$error"><label></label>
 							<p class="input-error-msg" ng-message="required">This field is required</p>
 						</div>					
 					</li>

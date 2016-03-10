@@ -1,9 +1,7 @@
-/*box-sizing: border-box;*/
-
 /* Layout */
 
 .container {
-	width: 70%;
+	width: 60%;
 	margin: 0 auto;
 }
 
@@ -52,6 +50,8 @@ label {
 
 input {
 	width: 45%;
+	height: 1em;
+	border: 1px solid black;
 }
 
 .centre-text  {
@@ -62,7 +62,8 @@ input {
 	text-align: right;
 }
 
-.input-error {
+input.ng-invalid {
+/*.input-error {*/
 	border: solid 1px red;
 }
 
