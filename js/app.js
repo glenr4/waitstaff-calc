@@ -1,5 +1,5 @@
 angular.module('waitStaffApp', ['ngMessages'])
-	.controller('waitStaffCtrl', function($scope){
+	.controller('waitStaffCtrl', function($scope, $timeout){
 
 		var mealData = [];
 
@@ -21,16 +21,15 @@ angular.module('waitStaffApp', ['ngMessages'])
 		};
 
 		$scope.reset = function(){
-			$scope.custSubTotal = "";
-			$scope.custTip = "";
-			$scope.custTotal = "";
+			$scope.custSubTotal = "0";
+			$scope.custTip = "0";
+			$scope.custTotal = "0";
 
-			$scope.earningsTip = "";
-			$scope.earningsCount = "";
-			$scope.earningsAvgTip = "";
+			$scope.earningsTip = "0";
+			$scope.earningsCount = "0";
+			$scope.earningsAvgTip = "0";
 
 			clearForm();
-			console.log("reset");
 		};
 
 		customerCharges = function(){
@@ -62,9 +61,9 @@ angular.module('waitStaffApp', ['ngMessages'])
 		};
 
 		// Initialise Customer Charges and Earnings
-		angular.element(document).ready(function(){
-			// This runs but does not set the variables to $0.00?
-			$scope.reset();
-			console.log("ready");
-		});
+		$scope.init = function(){
+			$timeout(function() {
+				$scope.reset();
+			}, 0);
+		};
 	});
