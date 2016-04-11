@@ -1,4 +1,25 @@
-angular.module('waitStaffApp', ['ngMessages'])
+angular.module('waitStaffApp', ['ngMessages', 'ngRoute'])
+	.config(['$routeProvider', function($routeProvider){
+		$routeProvider
+		.when('/', {
+			templateUrl: 'home.html',
+			controller: 'HomeCtrl'
+		})
+		.when('/new-meal', {
+			templateUrl: 'new-meal.html',
+			controller: 'MealCtrl'
+		})
+		.when('/my-earnings', {
+			templateUrl: 'my-earnings.html',
+			controller: 'EarningsCtrl'
+		})
+		.when('/error', {
+			function($location){
+				$location.path('/');
+			}
+		})
+		.otherwise('/error');
+	}])
 	.controller('waitStaffCtrl', function($scope, $timeout){
 
 		var mealData = [];
@@ -66,4 +87,13 @@ angular.module('waitStaffApp', ['ngMessages'])
 				$scope.reset();
 			}, 0);
 		};
+	})
+	.controller('HomeCtrl', function($scope){
+
+	})
+	.controller('MealCtrl', function($scope){
+
+	})
+	.controller('EarningsCtrl', function($scope){
+
 	});

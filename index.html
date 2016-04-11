@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-messages.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
 	<script src="js/app.js"></script>
 
 
@@ -16,75 +17,13 @@
 	
 		<header>
 			<h1>Waitstaff Calculator</h1>
+			<nav>
+				<a href="#/">Home</a> | <a href="#/new-meal">New Meal</a> | <a href="#/my-earnings">My Earnings</a>
+			</nav>
 		</header>
 	<div class="container">
-		<section id="enter-details" class="block-top border">
-			<h2>Enter the Meal Details<hr></h2>
-			<form name="detailsForm" novalidate ng-submit="detailsForm.$valid && submit()">
-				<ul>
-					<li>
-						<label>Base Meal Price: $</label>
-						<input type="number" name="mealPrice" placeholder="0.00" ng-model="mealPrice" ng-required="detailsForm.$submitted">
-					</li>
-					<li>
-						<div ng-messages="detailsForm.mealPrice.$error"><label></label>
-							<p class="input-error-msg" ng-message="required">This field is required</p>
-						</div>					
-					</li>
-
-					<li>
-						<label>Tax Rate: %</label>
-						<input type="number" name="taxRate" placeholder="10" ng-model="taxRate" ng-required="detailsForm.$submitted">
-					</li>
-					<li>
-						<div ng-messages="detailsForm.taxRate.$error"><label></label>
-							<p class="input-error-msg" ng-message="required">This field is required</p>
-						</div>					
-					</li>
-
-					<li>
-						<label>Tip Percentage: %</label>
-						<input type="number" name="tipPcnt" placeholder="15" ng-model="tipPcnt" ng-required="detailsForm.$submitted">
-					</li>
-					<li>
-						<div ng-messages="detailsForm.tipPcnt.$error"><label></label>
-							<p class="input-error-msg" ng-message="required">This field is required</p>
-						</div>					
-					</li>
-
-				</ul>
-				<div class="centre-text">
-					<button type="submit" name="submit">Submit</button>
-					<button type="button" name="cancel" ng-click="cancel()">Cancel</button>
-				</div>
-			</form>
-		</section>
-
-		<section id="charge-earnings" class="block-top">
-			<div id="customer-charges" class="border">
-				<h2>Customer Charges<hr></h2>
-				<ul>
-					<li><label>Subtotal: </label> {{custSubTotal | currency:$:2}}</li>
-					<li><label>Tip: </label> {{custTip | currency:$:2}}</li>
-					<li><label>Total: </label> {{custTotal | currency:$:2}}</li>
-				</ul>
-			</div>
-
-			<div id="earnings" class="border">
-				<h2>My Earnings Info<hr></h2>
-				<ul>
-					<li><label>Tip Total: </label> {{earningsTip | currency:$:2}}</li>
-					<li><label>Meal Count: </label> {{earningsCount}}</li>
-					<li><label>Average Tip Per Meal: </label> {{earningsAvgTip | currency:$:2}}</li>
-				</ul>
-			</div>
-		</section>
+		<div ng-view></div>
 	</div>
-
-	<footer class="container">
-		<div class="right-text">
-			<button type="button" name="reset" ng-click="reset()">Reset</button>
-		</div>
-	</footer>
+	
 </body>
 </html>

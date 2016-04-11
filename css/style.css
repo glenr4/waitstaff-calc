@@ -5,18 +5,23 @@
 	margin: 0 auto;
 }
 
-.block-top {
+/*.block-top {
 	display: inline-block;
 	vertical-align: top;
 }
+*/
+.narrow-body {
+	width: 50%;
+	margin: 0 auto;
+}
 
-#enter-details {
+/*#enter-details {
 	width: 50%;
 }
 
 #charge-earnings {
 	width: 45%;
-}
+}*/
 
 ul {
 	padding: 0;
@@ -38,8 +43,12 @@ li {
 	margin-bottom: 3px;
 }
 
-h1, h2 {
+h1, h2, nav {
 	text-align: center;
+}
+
+nav {
+	padding-bottom: 10px;
 }
 
 label {
