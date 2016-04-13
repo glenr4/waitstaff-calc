@@ -1,0 +1,14 @@
+<section class="narrow-body" ng-controller="EarningsCtrl">
+	<div class="border">
+		<h2>My Earnings Info<hr></h2>
+		<ul>
+			<li><label>Tip Total: </label> {{earningsTip | currency:$:2}}</li>
+			<li><label>Meal Count: </label> {{earningsCount}}</li>
+			<li><label>Average Tip Per Meal: </label> {{earningsAvgTip | currency:$:2}}</li>
+		</ul>
+	</div>
+	
+	<div class="right-text">
+		<button type="button" name="reset" ng-click="reset()">Reset</button>
+	</div>
+</section>

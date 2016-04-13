@@ -1,0 +1,52 @@
+<section class="narrow-body" ng-controller="MealCtrl" ng-init="init()">
+	<div class="border">
+		<h2>Enter the Meal Details<hr></h2>
+		<form name="detailsForm" novalidate ng-submit="detailsForm.$valid && submit()">
+			<ul>
+				<li>
+					<label>Base Meal Price: $</label>
+					<input type="number" name="mealPrice" placeholder="0.00" ng-model="mealPrice" ng-required="detailsForm.$submitted">
+				</li>
+				<li>
+					<div ng-messages="detailsForm.mealPrice.$error"><label></label>
+						<p class="input-error-msg" ng-message="required">This field is required</p>
+					</div>					
+				</li>
+
+				<li>
+					<label>Tax Rate: %</label>
+					<input type="number" name="taxRate" placeholder="10" ng-model="taxRate" ng-required="detailsForm.$submitted">
+				</li>
+				<li>
+					<div ng-messages="detailsForm.taxRate.$error"><label></label>
+						<p class="input-error-msg" ng-message="required">This field is required</p>
+					</div>					
+				</li>
+
+				<li>
+					<label>Tip Percentage: %</label>
+					<input type="number" name="tipPcnt" placeholder="15" ng-model="tipPcnt" ng-required="detailsForm.$submitted">
+				</li>
+				<li>
+					<div ng-messages="detailsForm.tipPcnt.$error"><label></label>
+						<p class="input-error-msg" ng-message="required">This field is required</p>
+					</div>					
+				</li>
+
+			</ul>
+			<div class="centre-text">
+				<button type="submit" name="submit">Submit</button>
+				<button type="button" name="cancel" ng-click="cancel()">Cancel</button>
+			</div>
+		</form>
+	</div>
+	
+	<div id="customer-charges" class="border">
+		<h2>Customer Charges<hr></h2>
+		<ul>
+			<li><label>Subtotal: </label> {{custSubTotal | currency:$:2}}</li>
+			<li><label>Tip: </label> {{custTip | currency:$:2}}</li>
+			<li><label>Total: </label> {{custTotal | currency:$:2}}</li>
+		</ul>
+	</div>
+</section>
