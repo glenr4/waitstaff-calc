@@ -1,6 +1,6 @@
 // Notes from the course: "In this refactor, you will have to use $rootScope. While this is not a good way to build production code, it's important to learn these concepts before you move into handling data. Later in the course, you will learn about factories and services, which would be the ideal way to handle this data."
 
-angular.module('waitStaffApp', ['ngMessages', 'ngRoute'])
+angular.module('waitStaffApp', ['ngMessages', 'ngRoute', 'ngAnimate'])
 	.config(['$routeProvider', function($routeProvider){
 		$routeProvider
 		.when('/', {
